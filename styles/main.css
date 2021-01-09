@@ -39,7 +39,6 @@ body {
   padding: 0;
   list-style: none;
   width: 100%;
-  box-shadow: 2px 2px 5px 1px #e6e6e6;
 }
 
 .todo-list li {
@@ -47,4 +46,32 @@ body {
   font-size: 24px;
   padding: 16px 32px;
   border-bottom: 1px solid #dddddd;
+}
+
+.todo-footer {
+  padding: 8px 16px;
+  color: #999999;
+}
+
+.todo-count {
+  margin-right: 70px;
+}
+
+.todo-button {
+  color: #999999;
+  background-color: transparent;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  padding: 5px 7px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.todo-button:hover {
+  border: 1px solid rgba(175, 47, 47, 0.1);
+}
+
+.todo-button--active {
+  border: 1px solid rgba(175, 47, 47, 0.2);
 }
