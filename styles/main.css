@@ -75,3 +75,8 @@ body {
 .todo-button--active {
   border: 1px solid rgba(175, 47, 47, 0.2);
 }
+
+.todo-item input:checked + .todo-text {
+  text-decoration: line-through;
+  color: #dddddd;
+}
