@@ -1,4 +1,4 @@
-const todoItems = ["simple todo 1", "simple todo 2"];
+const myTodoItems = [];
 
 function renderTodoItem (todoText) {
 return `
@@ -13,6 +13,7 @@ return `
 
 function renderTodos(todoItems) {
     const $todoList = document.querySelector(".todo-list");
+    $todoList.innerHTML = ""
     
     for (let i = 0; i < todoItems.length; i = i + 1) {
         const todoItem = todoItems[i];
@@ -20,6 +21,26 @@ function renderTodos(todoItems) {
     }
 }
 
-const myTodoItems = ["shopping", "read book", "exercise", "make lunch"];
+function addTodo(newTodo, todoItems) {
+    todoItems.push(newTodo);
+    renderTodos(todoItems);
+}
+
+const $input = document.querySelector(".todo-input");
+
+function onEnterClicked(event) {
+    if (event.key === "Enter") {
+        const newTodo = $input.value;
+
+        if (newTodo) {
+            addTodo(newTodo, myTodoItems);
+            $input.value = "";
+        }
+    }
+
+}
+
+$input.addEventListener("keypress", onEnterClicked);
+
 
 renderTodos(myTodoItems)
